@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ลิงก์สั้นของฉัน</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">SIMPLE SHORT LINK</p>
+        <h1>ย่อลิงก์ให้จำง่าย</h1>
+        <p>สร้างลิงก์สั้นของคุณเอง พร้อมดูจำนวนคลิกได้ในที่เดียว</p>
+      </section>
+      <section class="card">
+        <h2>สร้างลิงก์ใหม่</h2>
+        <form id="link-form">
+          <label>ปลายทาง<input name="url" type="url" placeholder="https://example.com/your-long-link" required /></label>
+          <div class="two-cols">
+            <label>ชื่อเรียก (ไม่บังคับ)<input name="title" placeholder="โปรโมชันเดือนนี้" /></label>
+            <label>รหัสลิงก์ (ไม่บังคับ)<input name="code" pattern="[A-Za-z0-9_-]{3,32}" placeholder="promo" /></label>
+          </div>
+          <button type="submit">สร้างลิงก์สั้น</button>
+          <p id="message" role="status"></p>
+        </form>
+      </section>
+      <section class="links-section">
+        <div class="section-heading"><h2>ลิงก์ของฉัน</h2><button id="refresh" class="ghost">รีเฟรช</button></div>
+        <div id="links" class="links"><p class="empty">กำลังโหลด…</p></div>
+      </section>
+    </main>
+    <template id="link-template"><article class="link-row"><div><strong class="title"></strong><a class="short" target="_blank" rel="noopener"></a><p class="destination"></p></div><div class="actions"><span class="clicks"></span><button class="copy ghost">คัดลอก</button><button class="delete">ลบ</button></div></article></template>
+    <script src="/app.js"></script>
+  </body>
+</html>
